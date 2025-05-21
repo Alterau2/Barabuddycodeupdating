@@ -1,6 +1,7 @@
 :root {
     --primary-bg: #f5f5dc;
     --sidebar-bg: #ffffff;
+    --chat-bg: #e6dbc2;         /* NEW: For chatbot message backgrounds */
     --text-primary: #1B3641;
     --text-secondary: #666666;
     --border-color: rgba(0, 0, 0, 0.1);
@@ -9,6 +10,7 @@
 html.dark {
     --primary-bg: #1B3641;
     --sidebar-bg: #0f2229;
+    --chat-bg: #22363f;         /* NEW: A darker background for chat in dark mode (adjust if needed) */
     --text-primary: #faf6f1;
     --text-secondary: #999999;
     --border-color: rgba(255, 255, 255, 0.1);
@@ -17,6 +19,7 @@ html.dark {
 html.her {
     --primary-bg: #C77D52;
     --sidebar-bg: #983724;
+    --chat-bg: #e6dbc2;         /* Still the beige tone for her mode */
     --text-primary: #ffffff;
     --text-secondary: #f0f0f0;
     --border-color: rgba(255, 255, 255, 0.2);
