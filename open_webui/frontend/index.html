@@ -341,26 +341,28 @@
     }
 
     #splash-screen {
-        position: fixed;
-        z-index: 100;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #faf6f1;
-    }
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5dc;  /* Changed to beige */
+}
 
-    html.dark #splash-screen {
-        background: #1B3641;
-    }
+/* Apply beige for dark theme as well */
+html.dark #splash-screen {
+    background: #f5f5dc;  /* Changed to beige */
+}
 
-    html.her #splash-screen {
-        background: #C77D52;
-    }
+/* Apply beige for "her" theme */
+html.her #splash-screen {
+    background: #f5f5dc;  /* Changed to beige */
+}
 
     .main-logo {
         width: auto;
