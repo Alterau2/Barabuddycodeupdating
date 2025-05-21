@@ -1,0 +1,121 @@
+
+Labsheet 5: Website Wireframe Prototype in Adobe XD
+UI/UX Design – Interactive Web Prototyping
+
+Introduction
+
+This lab builds upon wireframing basics by introducing interactive prototyping in Adobe XD. You will design a multi-page website wireframe, implement clickable navigation, and learn to test transitions.
+
+Learning Objectives
+
+- Create multi-page wireframes
+- Implement navigation systems
+- Use Adobe XD’s Prototype mode
+- Preview and test navigation flow
+- Export designs for presentation or handoff
+
+Tools and Setup
+
+Equipment:
+- Windows or Mac with internet
+- Adobe XD (v42+)
+
+Workspace Setup:
+- Create Web 1920 artboard
+- Rename to “Home”
+- Save file as: indexNo_name_labsheet05.xd
+- Import reference image: sample_wireframe.jpg
+
+Wireframe Creation
+
+Step 1: Multi-Page Layouts
+Create four pages:
+- Home
+- Products
+- About Us
+- Contact Us
+
+Maintain:
+- Navigation bar
+- Font styles
+- 8px spacing grid
+
+Step 2: Prototyping Fundamentals
+
+- Click Prototype tab
+- Use Select/Zoom tools
+- Blue = active, arrows = navigation
+
+Step 3: Create Basic Navigation
+
+- Drag node from Home to Products
+- Set:
+  - Type: Auto-Animate
+  - Duration: 0.4s
+  - Easing: Ease Out
+  - Trigger: Tap
+- Repeat: Products → About → Contact → Home
+
+Step 4: Preview & Testing
+
+- Use Desktop Preview
+- Test all navigation
+- Fix broken/red links
+- Check artboard alignment
+
+Step 5: Advanced Navigation
+
+Navigation Menu:
+- Add menu to each page
+- Link all pages
+- Highlight active links
+
+Component States:
+- Add hover animations
+- Use for buttons or toggles
+
+Best Practices for Prototyping
+
+Layout:
+- Use consistent layout and spacing
+- Minimum button size: 48×48px
+- Use 8px spacing grid
+
+Interaction Flow:
+- Transition speed: 300–500ms
+- Easing: Ease Out
+- Keep it simple
+
+File Organization:
+- Name artboards clearly
+- Group related elements
+- Color-code if needed
+
+Evaluation Criteria
+
+- Four complete pages
+- Functional page-to-page links
+- Proper use of Prototype tools
+- Consistent layout and spacing
+- Organized layers and naming
+
+Suggested Plugins
+
+Plugin   | Use
+---------|-------------------------------
+UI Faces | Avatar placeholders
+Chart    | Placeholder charts/stats
+Iconify  | Free icons library
+
+Bonus Tasks
+
+- Add hover/micro-interactions
+- Use overlay menus
+- Create mobile versions
+- Build a user flow diagram
+
+Pro Tools to Explore
+
+- Adobe XD Share – Real-time collaboration
+- UserTesting.com – Feedback testing
+- Zeplin – Dev handoff with specs

@@ -1,0 +1,203 @@
+/* Base splash screen styles */
+html {
+    overflow-y: hidden !important;
+}
+
+#splash-screen {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #faf6f1;
+}
+
+html.dark #splash-screen {
+    background: #1B3641;
+}
+
+html.her #splash-screen {
+    background: #C77D52;
+}
+
+/* Logo styles */
+.main-logo {
+    width: auto;
+    height: 8rem;
+    margin-bottom: 1rem;
+    pointer-events: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Welcome text styles */
+.welcome-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.75rem;
+    color: #1B3641;
+    margin-top: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+    font-weight: 600;
+}
+
+html.dark .welcome-text {
+    color: #faf6f1;
+}
+
+html.her .welcome-text {
+    color: #ffffff;
+}
+
+/* Date/Time and User Info Container */
+.info-container {
+    margin: 1rem 0;
+    padding: 0.8rem 1.2rem;
+    background: rgba(27, 54, 65, 0.05);
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.datetime-display,
+.user-display {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+    color: #1B3641;
+    margin: 0.3rem 0;
+    padding: 0.2rem;
+}
+
+html.dark .datetime-display,
+html.dark .user-display {
+    color: #faf6f1;
+}
+
+html.her .datetime-display,
+html.her .user-display {
+    color: #ffffff;
+}
+
+html.dark .info-container {
+    background: rgba(250, 246, 241, 0.05);
+}
+
+html.her .info-container {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Progress container styles */
+.progress-container {
+    position: relative;
+    width: 24rem;
+    max-width: 90vw;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.her-logo {
+    width: auto;
+    height: 15rem;
+    display: none;
+    pointer-events: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.progress-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+#progress-background {
+    position: absolute;
+    width: 100%;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: rgba(27, 54, 65, 0.1);
+    display: none;
+}
+
+#progress-bar {
+    position: absolute;
+    width: 0%;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background-color: #1B3641;
+    display: none;
+    animation: loading 2s ease-in-out infinite;
+}
+
+html.dark #progress-bar {
+    background-color: #faf6f1;
+}
+
+html.her .main-logo {
+    display: none;
+}
+
+html.her .her-logo {
+    display: block;
+    filter: invert(1);
+}
+
+html.her #progress-background {
+    display: block;
+}
+
+html.her #progress-bar {
+    display: block;
+}
+
+/* Media queries */
+@media (max-width: 24rem) {
+    html.her #progress-background {
+        display: none;
+    }
+
+    html.her #progress-bar {
+        display: none;
+    }
+
+    .datetime-display,
+    .user-display {
+        font-size: 0.8rem;
+    }
+
+    .info-container {
+        padding: 0.6rem 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    50% { opacity: 0.65; }
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    50% { width: 70%; }
+    100% { width: 100%; }
+}
+
+.animate-pulse-fast {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

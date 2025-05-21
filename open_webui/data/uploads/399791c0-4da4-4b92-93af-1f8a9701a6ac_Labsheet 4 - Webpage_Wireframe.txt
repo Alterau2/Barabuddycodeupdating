@@ -1,0 +1,115 @@
+
+Labsheet 4: Creating a Webpage Wireframe in Adobe XD
+UI/UX Design – Web Interface Prototyping
+
+Introduction to Wireframing
+
+Wireframing is a blueprint for digital interfaces. It focuses on layout and functionality without visual styling.
+
+This lab teaches you how to build a responsive website wireframe using Adobe XD.
+
+Learning Objectives
+
+- Understand typography fundamentals
+- Use and manage plugins in Adobe XD
+- Work with responsive artboards
+- Use the Repeat Grid feature
+- Construct a complete webpage wireframe
+
+Required Tools
+
+Equipment:
+- PC with internet
+- Adobe XD installed
+
+Recommended:
+- 8GB+ RAM
+- 1920×1080 screen
+- Adobe Creative Cloud account
+
+Step-by-Step Wireframe Guide
+
+1. Initial Setup:
+- Open Adobe XD → Select “Web 1920” artboard
+- Rename to “Home”
+- Save as: indexNo_name_labsheet04
+
+2. Understanding Wireframes:
+- Layout only, no styling
+- Grayscale, placeholders
+- No real images or final text
+
+3. Navigation Bar:
+- Full-width bar
+- Add “LOGO” and “TAGLINE” (left)
+- Add “LOG IN” button (right)
+- Font size 16–18px
+
+4. Hero Image:
+- Use Quick Mockup plugin
+- Add 1920×800 px image placeholder
+- Label as “Hero Image”
+
+5. Content Section:
+- Extend height to 2000px
+- Add “Video Player” placeholder
+- Insert text using Lorem Ipsum plugin
+
+6. Benefits Section:
+- Draw 560×330 px card
+- Add title and text
+- Right-click → Make Component
+- Use Repeat Grid (3 copies, 40px spacing)
+
+7. Testimonial Section:
+- Ellipse Tool → Circular avatar (corner radius 300px)
+- Add “Testimonials” heading and short description
+
+8. Call-to-Action Section:
+- Add input field and button using Quick Mockup
+- Label as “Email” and “SUBMIT”
+
+9. Footer:
+- Full-width rectangle
+- Add social icons (Icons 4 Design plugin)
+- Icon size: 40×40 px
+
+Responsive Design Challenge
+
+Mobile View:
+- Create iPhone 12 Pro Max artboard
+- Stack layout vertically
+- Adjust font sizes and button sizes
+- Simplify navigation
+
+Essential Plugins to Install
+
+Quick Mockup – For UI elements
+Lorem Ipsum – Placeholder text
+Icons 4 Design – Social icons
+
+Install via: Adobe XD → Plugins → Browse Plugins
+
+Best Practices
+
+- Use 8px grid for spacing
+- Keep font sizes consistent
+- Group items and name layers
+- Use components for repeated elements
+
+Evaluation Criteria
+
+- Setup of artboards/layers
+- Use of XD tools and plugins
+- Logical, clean layout
+- Good alignment and spacing
+- Desktop and mobile wireframes complete
+
+Additional Resources
+
+Book: “Don’t Make Me Think” by Steve Krug
+
+Practice Tasks:
+- Wireframe an e-commerce homepage
+- Create layout variations for blogs
+- Build and save a component library

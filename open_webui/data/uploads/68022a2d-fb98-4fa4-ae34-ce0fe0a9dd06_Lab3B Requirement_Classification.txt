@@ -1,0 +1,85 @@
+
+Lab 3B: Requirement Classification and Software Requirements Specification (SRS)
+Software Development Practices
+
+Objectives
+
+In this lab, you will:
+- Classify requirements into Functional Requirements (FRs) and Non-Functional Requirements (NFRs)
+- Identify the correct elements that belong in a Software Requirements Specification (SRS) document
+
+Tools, Equipment, and Materials
+
+Hardware: Personal Computer with Internet access
+Software: Text Editing Software
+
+Part (B) – i. Requirement Classification Types
+
+Functional Requirements (FRs):
+- Describe what the software must do — its specific features and operations.
+- Define core logic, workflows, and interactions.
+
+Examples of FRs:
+- Validate user PIN during login
+- Search and retrieve book titles
+- Submit online payment form
+
+Non-Functional Requirements (NFRs):
+- Define how well the system performs (performance, reliability, scalability, usability).
+- Address quality, not features.
+
+Examples of NFRs:
+- System shall respond within 2 seconds.
+- Uptime must be 99.9% over 30 days.
+- Interface shall support screen readers.
+
+Examples and Classification:
+
+a. ATM machine shall validate PIN of the user during login along with biometric verification.
+→ Functional Requirement (FR)
+
+b. “Peak transaction volume(s)” - 20,000 calls in a busy hour, average duration 20 seconds, grade of service 99.98%.
+→ Non-Functional Requirement (NFR)
+
+c. "Brake System” - It shall sound the alarm for 10 seconds at frequency of 100Hz when the brake is applied.
+→ Functional Requirement (FR)
+
+d. "Mean Time to Failure (MTTF)” - There should be no more than three severity-1 outages per month.
+→ Non-Functional Requirement (NFR)
+
+Part (B) – ii. Elements of an SRS Document
+
+What is an SRS?
+
+A Software Requirements Specification (SRS) is a comprehensive document that outlines:
+- Functional behavior (what the system must do)
+- Non-functional behavior (how well it should perform)
+- Business context and system goals
+
+What’s Typically Included in an SRS?
+
+System Overview – Yes – Provides system context and purpose
+Class Diagram – Yes – Visual system structure
+Source Code – No – Not part of the requirements phase
+Use Cases – Yes – Describes user-system interactions
+Algorithm Flow Charts – No – Belongs in design/implementation
+Code Review Comments – No – Related to development
+Test Results – No – QA/testing stage
+Scope Difference (Current vs Proposed) – Yes – Compares existing and future systems
+Non-Functional Requirements – Yes – Performance, security, etc.
+New Portal Features – Yes – Planned system functionalities
+
+Case Study Summary (Sample Scenario)
+
+Client: Article Systems (AS)
+Developer: ABC Ltd.
+Goal: Build a global portal to automate and centralize book sales operations
+Development Model: Waterfall
+Scope: Eliminate limitations in current system and enable a large-scale, unified platform
+
+Summary
+
+- Functional Requirements explain what the system should do.
+- Non-Functional Requirements explain how well it should perform.
+- The SRS is the key deliverable of the analysis phase.
+- Proper classification ensures both user needs and system quality are addressed.

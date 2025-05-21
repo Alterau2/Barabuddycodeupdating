@@ -1,0 +1,208 @@
+
+Chapter 7: Use Case Diagram – Part 2
+Advanced Use Case Relationships in UML
+
+Recap: Basic Elements of Use Case Diagrams
+
+Element | Description
+--------|-------------
+System Boundary | Rectangle that defines the scope of the system.
+Actor | External entity that interacts with the system (person, org, or other system).
+Use Case | A goal the user wants to achieve with the system (represented by an oval).
+Relationships | Connect actors to use cases or link use cases together.
+
+Actors: Primary vs. Secondary
+- Primary Actor: Initiates the interaction (e.g., Customer, Library Patron)
+- Secondary Actor: Supports the interaction or is used by the system (e.g., Database, Payment Gateway)
+- Represented as stick figures
+
+Types of Use Case Relationships
+
+1. Association
+- Solid line between actor and use case
+- Shows which actor is involved in which use case
+Example: Student → Submit Assignment
+
+2. Include (<<include>>)
+- Represents mandatory behavior
+- Use case must include another use case as part of its process
+Arrow direction: From base use case → included use case
+Example: "Place Order" → <<include>> → "Login"
+
+Use When:
+- Shared behavior appears in multiple use cases
+- Promotes reuse and avoids redundancy
+
+3. Extend (<<extend>>)
+- Represents optional behavior
+- Use case may extend another use case under certain conditions
+Arrow direction: From extending use case → base use case
+Example: "Add Gift Message" <<extend>> → "Place Order"
+
+Use When:
+- Optional feature that depends on a condition
+- Base use case is still valid without the extension
+
+4. Generalisation
+
+A. Generalisation of Actors
+- Child actor inherits behavior of parent actor
+Arrow: Solid line with hollow triangle pointing to parent
+Example: Editor, Customer → inherit from Web Client
+
+B. Generalisation of Use Cases
+- Child use case shares base behavior, adds specifics
+Example:
+"Pay by Card" and "Pay by PayPal" → inherit from "Make Payment"
+
+Diagram Example 1: Library System
+
+Actors:
+- Library Patron: Check out, Return, Search
+- Librarian: Check availability, Request, Check out
+
+Use Cases:
+- Search
+- Return
+- Check Out
+- Request
+- Check Availability
+
+System boundary encloses all use cases, showing system scope.
+Actors are positioned on opposite sides for clarity.
+
+Diagram Example 2: Inventory Management System
+
+Actors:
+- Admin
+- Inventory Staff
+- Customer
+- Supplier
+
+Use Cases:
+- Add Product
+- Remove Product
+- Update Product
+- View Product
+- Receive Order
+- Place Order
+
+Include vs Extend – Summary Table
+
+Feature | <<include>> | <<extend>>
+--------|-------------|-------------
+Arrow Direction | Base → Included | Extending → Base
+Usage | Mandatory step | Optional/conditional step
+Base Use Case | Incomplete without included case | Complete even without extension
+Purpose | Reuse shared functionality | Add optional behavior
+Example | Login included in Place Order | Help extends Withdraw Money
+
+Real-Life Analogy: Coffee Machine
+- General Use Case: Pay
+- Specializations: Pay by Coins, Pay by Card
+Use generalisation to show inheritance.
+
+Common Mistakes to Avoid
+- Arrows pointing the wrong way (include: base → included; extend: extender → base)
+- Missing system boundary name
+- Merging "Login" and "Logout" as one use case (they're different!)
+- Using actor names instead of roles (use "Airline Staff" not "PanAir Employee")
+- Making unclear or overly complex diagrams
+
+Use Case Diagram Guidelines
+- Start use case names with a verb: e.g., "Place Order", "Reset Password"
+- Name actors by role, not real people: e.g., "Student", "Buyer"
+- Place primary actors on the left, secondary on the right
+- Keep it simple, avoid clutter
+
+Revision Questions
+
+1. What is an <<include>> relationship?
+→ Mandatory use case that is reused across others.
+Example: "Withdraw Money" <<include>> → "Update Balance"
+
+2. Who are the primary actors in an inventory system?
+→ Foreman, Warehouse Worker, Customer, Sales Person, Truck Driver
+
+3. What are the types of relationships in use case diagrams?
+- Association
+- Generalisation (actor & use case)
+- <<include>>
+- <<extend>>
+
+Generalisation of a Use Case (Expanded)
+
+Definition: Generalisation in a use case diagram is a hierarchical relationship where child use cases inherit the common behavior of a parent use case but also implement their own specialized behaviors.
+
+Purpose:
+- Reuse shared functionality across multiple use cases.
+- Keep the diagram organized and minimize repetition.
+
+Guidelines:
+- Specialized (child) use cases go below the general (parent) use case.
+- Use solid line with hollow triangle arrowhead from child to parent.
+
+Examples:
+- Verify Visitor Identity → Verify Visitor Fingerprint, Verify Visitor ID Card
+- Web User Authentication → Login, Remember Me, Single Sign-On
+
+Generalisation of a Use Case (Coffee Machine Example)
+
+Scenario:
+- Coffee machine supports Pay by Coins and Pay by Card
+- General use case: Pay
+- Child use cases inherit behavior and add details
+
+Use Case Diagram Guidelines – Summary
+
+Naming Standards:
+- Use nouns for actors (e.g., User, Manager)
+- Use verbs for use cases (e.g., Login, View Report)
+
+Layout Guidelines:
+- Group related use cases
+- Place included use cases to the right
+- Use generalisation where appropriate
+
+Generalisation of an Actor
+
+Definition:
+- Child actors inherit behaviors from parent actor.
+
+Examples:
+- Web Client → Administrator, Editor, Customer
+- Library User → Student, Lecturer
+
+Arrow Style:
+- Solid line with hollow triangle pointing from child to parent
+
+Include vs Extend – Summary
+
+Include:
+- Use case must include another use case
+- Base is incomplete without included one
+- Mandatory behavior
+- Example: Bank ATM Transaction includes Customer Authentication
+
+Extend:
+- Optional behavior that adds to a use case
+- Base still works on its own
+- Example: Help extends Bank ATM Transaction
+
+Revision Examples
+
+Withdraw Money <<include>> Update Balance – because updating balance is mandatory.
+
+Primary actors in inventory system:
+- Foreman
+- Warehouse Worker
+- Customer
+- Sales Person
+- Truck Driver
+- Forklift Driver
+
+Types of Relationships:
+- Association
+- Generalisation (Actor and Use Case)
+- <<include>>
+- <<extend>>

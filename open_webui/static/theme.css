@@ -1,0 +1,23 @@
+:root {
+    --primary-bg: #faf6f1;
+    --sidebar-bg: #ffffff;
+    --text-primary: #1B3641;
+    --text-secondary: #666666;
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+html.dark {
+    --primary-bg: #1B3641;
+    --sidebar-bg: #0f2229;
+    --text-primary: #faf6f1;
+    --text-secondary: #999999;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.her {
+    --primary-bg: #C77D52;
+    --sidebar-bg: #983724;
+    --text-primary: #ffffff;
+    --text-secondary: #f0f0f0;
+    --border-color: rgba(255, 255, 255, 0.2);
+}

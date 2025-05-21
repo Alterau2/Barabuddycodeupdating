@@ -1,0 +1,97 @@
+
+Chapter 5: Storyboard and UI/UX
+Software Development Practices
+
+Roles and Responsibilities in Software Development Team
+- Project Manager: Oversees project scope, timeline, and resources
+- Product Owner: Defines business needs and prioritizes features
+- Team Lead: Coordinates development tasks and team communication
+- Tech Lead: Leads technical direction and architecture decisions
+- Developer: Implements project code and solutions
+- QA (Quality Assurance): Ensures software quality through testing
+- Tester: Executes manual or automated tests
+- UI Designer: Designs visual elements (buttons, graphics, colors)
+- UX Designer: Designs the user journey, prototypes, and flow
+
+Understanding UX (User Experience)
+- UX originally covered everything a user experiences: industrial design, visuals, interaction, documentation, and customer support.
+- Today, "UX" is often incorrectly used to mean just UI design.
+- UX is about the entire journey and emotional connection, not just interfaces.
+
+Understanding UI (User Interface)
+- UI deals with visual and interactive elements like screens, buttons, colors, and typography.
+- Common UI types: Graphical User Interface (GUI), Command Line Interface (CLI), Voice-enabled Interface.
+
+Difference Between UX and UI
+- UX: Experience and journey (feeling of using a product)
+- UI: Look and design of the product interface (visual layout)
+
+UX Process Overview
+- Understand users and define problems
+- Research and gather data
+- Sketch/Ideate solutions
+- Prototype
+- Test and iterate
+
+What is a Storyboard?
+- A storyboard is a visual sequence showing user journey or system interaction.
+
+Elements of a Storyboard
+- Scenario: The user story or situation
+- Visuals: Sketches/photos representing steps
+- Captions: Short descriptions of actions or emotions
+
+Storyboard Example: Office Supply Replenishment
+- Persona: Corporate Buyer, James
+- Scenario: Needs to reorder office supplies
+- Panels:
+  1. James notes missing supplies.
+  2. James orders supplies using a computer.
+  3. Order confirmation and restock planning.
+
+Why Use Storyboards in Software Development?
+- Helps think through user problems and solutions
+- Visualizes UX ideas clearly
+- Plans UI design flows
+- Aligns team understanding
+
+Types of Page Layout Structures
+- Linear: One straight path (e.g., e-books)
+- Hierarchical: Pages organized by category (e.g., menus)
+- Non-Linear: Flexible linking between pages (e.g., Wikipedia)
+- Composite: Mix of structures (advanced topic)
+
+UX/UI Design Case Study: Food Recognition App
+- Users: Lifestyle influencers, Foodies
+- User Problem: Difficulty identifying food
+- Mandatory Requirements: Camera capture, Nutritional info, Recipe discovery
+- Desirable: User accounts, Saved food history
+- Optional: Restaurant search
+- Future Enhancements: Navigation to restaurant
+
+App Flow Summary (seeFood App)
+- Open app and scan/upload food
+- View food information
+- Explore recipes
+- Find restaurants serving the dish
+- Sign up/log in to save preferences
+
+Storyboards in UI & UX
+- Describe user problems
+- Map user journeys
+- Visualize interface interactions
+
+Quick Revision
+1. Typography designer: UI Designer
+2. Three types of UIs: Graphical, Command-line, Voice-enabled
+3. Purpose of storyboards: Describe problems, visualize UX and UI
+4. Advantage of storyboards: Forces teams to think through problems and solutions
+
+References
+- SoftwareHut: Roles in Software Teams
+- UX Booth: Storyboards for Product Development
+- NN/g: Visualizing UX with Storyboards
+- Boords: Storyboarding Examples
+- Medium: Psychology of UI/UX
+- Ryan's Tutorials: Storyboarding in Software
+- Milanote: Storyboarding Templates

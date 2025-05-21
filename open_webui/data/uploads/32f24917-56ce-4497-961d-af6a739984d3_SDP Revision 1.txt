@@ -1,0 +1,103 @@
+
+Comprehensive Overview: Software Development Life Cycle (SDLC)
+Software Development Practices Revision
+
+What is SDLC?
+
+The Software Development Life Cycle (SDLC) is a structured, step-by-step process that guides developers in creating, maintaining, and retiring software systems efficiently and effectively.
+
+Goals of SDLC:
+- Deliver high-quality software that meets user expectations
+- Complete projects within deadlines
+- Maintain development cost control
+- Apply a systematic development approach
+
+Phases of the SDLC
+
+1. Planning and Requirement Analysis:
+- Conduct stakeholder interviews and surveys
+- Identify functional (what system does) and non-functional (how well system performs) requirements
+- Document requirements clearly
+
+2. System Design:
+- Define architecture and technical structure
+- Create design specifications, UI mockups, and prototypes
+- Establish hardware/software needs
+
+3. Implementation (Coding):
+- Developers begin actual programming
+- Use modular coding and version control tools (e.g., Git)
+- Follow coding standards and testing best practices
+
+4. Testing:
+- Verify that the system meets requirements
+- Levels of testing: Unit, Integration, System, Acceptance
+
+5. Deployment & Maintenance:
+- Release product to production
+- Gather user feedback (UAT)
+- Apply updates, patches, and performance monitoring
+- Fix issues as they arise
+
+SDLC Models Comparison
+
+Waterfall Model:
+- Sequential and linear. Each stage must be completed before the next begins.
+Pros: Simple, suitable for small projects, clear documentation
+Cons: Inflexible to changes, late working product, not ideal for complex needs
+
+Agile Model:
+- Iterative and incremental. Promotes adaptability and frequent customer feedback.
+Key Features: Sprints, working software delivery, team-customer collaboration
+Pros: Flexible, customer involvement, low late-stage risk
+Cons: Requires experience, hard to predict end product, minimal documentation
+
+DevOps Model:
+- Blends development and operations for rapid, reliable delivery.
+Core Concepts: CI/CD, automated testing/deployment, built-in monitoring
+Pros: Frequent updates, early issue detection, team collaboration
+Cons: High learning curve, complex tool setup, cultural shift required
+
+SDLC Model Comparison Overview
+
+Factor               | Waterfall | Agile  | DevOps
+---------------------|-----------|--------|--------
+Approach             | Linear    | Iterative | Integrated
+Flexibility          | Low       | High   | Medium
+Customer Involvement | Low       | High   | High
+Documentation        | Extensive | Lightweight | As needed
+Testing              | Final     | Ongoing | Automated
+Best For             | Stable    | Evolving | Frequent Deployment
+
+Tools by SDLC Model
+
+Waterfall Tools:
+- MS Project (Planning)
+- IBM Rational DOORS (Requirements)
+- Enterprise Architect (Design)
+
+Agile Tools:
+- Jira, Trello (Planning)
+- Selenium (Testing)
+- Jenkins (CI/CD)
+
+DevOps Tools:
+- Docker, Kubernetes (Deployment)
+- Ansible (Configuration)
+- Prometheus (Monitoring)
+- Git (Version Control)
+
+Conclusion
+
+SDLC models guide software teams in choosing the best strategy for developing and delivering software. There is no one-size-fits-all — the right model depends on:
+
+- Project scope and complexity
+- Flexibility of requirements
+- Customer collaboration level
+- Team structure and skills
+
+Waterfall is great for structured, predictable projects
+Agile fits dynamic, fast-paced environments
+DevOps empowers rapid delivery and operations integration
+
+Modern teams often blend multiple models to suit their needs — hybrid models are increasingly common.

@@ -1,0 +1,97 @@
+
+Chapter 1: Software Development Life Cycle (SDLC)
+Software Development Practices
+
+What is the SDLC?
+
+The Software Development Life Cycle (SDLC) is a structured process used for planning, developing, testing, and deploying software systems.
+It ensures the end product is high-quality, meets user expectations, and is delivered on time and within budget.
+
+Key Phases of the SDLC
+
+1. Requirement Analysis
+Objective: Understand what the software must do and gather user and business needs.
+Activities:
+- Conduct stakeholder interviews and surveys
+- Define functional and non-functional requirements
+- Document a Software Requirements Specification (SRS)
+
+2. Design
+Objective: Create a detailed blueprint based on gathered requirements.
+Activities:
+- Create system architecture and component-level design
+- Develop data models, UI mockups, and flowcharts
+- Review designs with stakeholders and validate for feasibility
+
+3. Implementation (Coding)
+Objective: Convert design documents into working code.
+Activities:
+- Set up development environment (IDE, repositories, libraries)
+- Write modular, reusable, and testable code
+- Perform unit testing and peer code reviews
+
+4. Testing
+Objective: Verify that the software functions as expected and is bug-free.
+Activities:
+- Create test plans and scenarios
+- Perform: Functional testing, Integration testing, Performance testing, Security testing
+- Log and resolve bugs through regression testing
+
+5. Deployment
+Objective: Move the software from development to production.
+Activities:
+- Prepare a deployment plan and rollback strategy
+- Configure the production environment
+- Monitor deployment and respond to any issues
+
+6. Maintenance
+Objective: Provide ongoing support, improvements, and issue resolution after release.
+Activities:
+- Monitor for performance issues, bugs, or user feedback
+- Apply security patches and feature enhancements
+- Ensure system compliance and uptime
+
+SDLC Methodologies
+
+Each methodology provides a different approach to navigating the SDLC phases.
+
+Waterfall Model
+- Linear and sequential
+- Each phase must be completed before moving to the next
+- Simple to manage but not flexible to changes
+Best for: Projects with clearly defined requirements
+
+Spiral Model
+- Combines iterative development with risk analysis
+- Includes planning, risk assessment, engineering, and evaluation in each cycle
+- Emphasizes early identification of high-risk areas
+Best for: Complex and high-risk projects
+
+Iterative Model
+- Builds software incrementally in cycles (iterations)
+- Each iteration adds functional components
+- Easier to adapt as feedback is incorporated early
+Best for: Projects requiring continuous feedback and improvement
+
+Agile Model
+- Focuses on adaptive planning, collaboration, and early delivery
+- Delivers working software in short sprints (1–4 weeks)
+- Promotes flexibility and stakeholder involvement
+Best for: Evolving requirements and customer-driven development
+
+V-Model (Verification and Validation)
+- An enhancement of the Waterfall model
+- Each development phase has a corresponding testing phase
+- Emphasizes test planning from the start
+Best for: Projects where quality and testing are critical (e.g., medical, aerospace)
+
+Summary
+
+Phase         | Key Outcome
+--------------|-------------------------------
+Requirements  | What the system should do
+Design        | How the system will be built
+Coding        | Building the system
+Testing       | Validating the system works
+Deployment    | Delivering the system to users
+Maintenance   | Supporting and improving the system

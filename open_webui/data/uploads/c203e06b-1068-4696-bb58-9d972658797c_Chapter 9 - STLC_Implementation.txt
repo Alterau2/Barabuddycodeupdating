@@ -1,0 +1,103 @@
+
+Chapter 9: Implement Software Testing
+Software Development Practices
+
+What is the Software Testing Life Cycle (STLC)?
+
+The Software Testing Life Cycle (STLC) is a structured process that outlines the steps needed to perform high-quality software testing. It ensures a systematic and consistent approach to identify defects and validate that the software meets business and technical requirements.
+
+STLC Phases Explained
+
+1. Requirement Analysis:
+Understand what to test, clarify the scope, and identify testable requirements.
+
+2. Test Planning:
+Decide testing strategy, assign responsibilities, select tools, and schedule resources.
+
+3. Test Case Design & Development:
+Write detailed test cases/scripts and prepare test data.
+
+4. Test Environment Setup:
+Configure necessary hardware, software, and access rights to run the tests.
+
+5. Test Execution:
+Run test cases, record results, and report defects.
+
+6. Test Cycle Closure:
+Evaluate test completion criteria, document lessons learned, and archive artifacts.
+
+SDLC vs STLC
+
+Feature | SDLC | STLC
+--------|------|------
+Focus | Building software features | Validating and verifying features
+Key Phases | Requirements → Design → Coding → Testing → Deployment | Requirements Analysis → Planning → Test Design → Execution
+Output | Working product | Quality-assured product with test reports
+
+Summary:
+- SDLC builds the product.
+- STLC tests the product.
+
+Testing Artifacts
+
+Test Plan: Outlines testing strategy, scope, resources, and schedule
+Test Cases: Step-by-step test actions with expected outcomes
+Test Design Documents: Define the scope, structure, and data of the tests
+
+Automated Testing
+
+Automated testing helps speed up repetitive test cases and improves accuracy using tools/scripts.
+
+Key Components:
+- Test Scripts: Code or commands that automate test execution.
+- Test Data: Predefined inputs and expected outputs.
+
+Common Methods:
+- Record & Playback: Tool records manual test actions to replay later
+- Keyword-Driven: Uses keywords (e.g., "Login", "Click") to execute tests
+- Data-Driven: Executes the same test with multiple sets of data
+- Script-Based: Written in programming languages (e.g., Selenium + Python)
+
+Example:
+Automating login test:
+- Input username and password
+- Click Login
+- Verify home page is shown
+
+User Acceptance Testing (UAT)
+
+UAT is the final phase of testing before a product goes live.
+
+Purpose:
+- Validate software meets business requirements
+- Performed by the end-users or clients
+- Occurs in a production-like environment
+
+Activities:
+- Execute predefined test scenarios
+- Report feedback or bugs
+- Approve or reject for deployment
+
+Summary of Key Points
+
+- STLC is a structured approach to plan, prepare, and execute tests.
+- Testing artifacts (Test Plan, Test Cases, Test Design) are essential.
+- Automated testing improves efficiency, especially in regression or repeated scenarios.
+- UAT ensures the software is ready for real-world use.
+
+Revision Questions
+
+1. What are the main phases of STLC?
+→ Requirement Analysis, Test Planning, Test Case Design, Test Environment Setup, Test Execution, Test Closure
+
+2. What is the difference between SDLC and STLC?
+→ SDLC builds the software; STLC tests it.
+
+3. What are common testing artifacts?
+→ Test Plan, Test Cases, Test Design Documents
+
+4. What methods are used in automated testing?
+→ Record/Playback, Keyword-Driven, Data-Driven, Script-Based
+
+5. Why is UAT important?
+→ Confirms software works for end-users and is ready for deployment.

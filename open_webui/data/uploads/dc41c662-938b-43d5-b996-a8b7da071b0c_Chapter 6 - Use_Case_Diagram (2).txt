@@ -1,0 +1,174 @@
+
+Chapter 6: Use Case Diagram
+Software Development Practices
+
+From User Requirements Document to User Story
+
+User Story:
+A user story is a short, simple description of a feature told from the perspective of the person who desires it.
+
+Format:
+As a < type of user >, I want < some goal > so that < some reason >.
+
+Examples:
+- As a driver, I want to block badly behaved passengers so that they are never shown to me again.
+- As a passenger, I want to link the credit card to my profile so that I can pay faster without cash.
+- As a driver, I want to add car photos to my profile to attract more users.
+- As a passenger, I want to view several available drivers to choose the most suitable one.
+
+Use Case in the SDLC
+
+- Realized during the Analysis and Design Phases of the SDLC.
+- Use Case: A written description of the user's interaction with the software to accomplish a goal.
+
+Food Delivery App Use Case Examples:
+- As a user, I can order food from shops.
+- As a user, I can change my contact details.
+- As a power user, I can cancel orders.
+- As a power user, I can reassign riders.
+
+Understanding UML (Unified Modeling Language)
+
+- UML is a standardized modeling language used by software developers to visualize project systems.
+- Diagrams help in both design and communication.
+
+Common UML Diagram Types
+
+Use Case Diagram: Interaction between users and system
+Class Diagram: Structure of classes and relationships
+State Diagram: Object behavior over states
+Object Diagram: Instances of objects
+Sequence Diagram: Step-by-step object interactions over time
+
+State Diagram: Example - Student Exam Performance
+
+Process Overview:
+1. Start → Points Added
+2. Decision:
+   - Less than 100 points → Fail
+   - 100 points or more → Pass
+3. Grade Determined
+4. Parallel Actions:
+   - Grade Published
+   - Study Permit Issued
+5. End of Process
+
+Sequence Diagram: Example - ATM Transaction
+
+Entities:
+- Customer
+- ATM
+- Third-Party Bank
+
+Flow:
+1. Customer inserts card and enters PIN.
+2. ATM validates PIN with Bank.
+3. Customer selects transaction type.
+4. Optional: Balance check if selected.
+5. If withdrawal: ATM requests funds from Bank.
+6. ATM communicates transaction result to Customer.
+
+Class and Object Diagrams: Employee and Office Example
+
+Classes:
+- Office: Number, Floor, Address
+- Employee: FirstName, LastName, Salary, Office (association)
+
+Subclasses:
+CEO, Manager, Worker
+
+Object Example:
+- John Smith (Worker) → OpenOffice (Office)
+
+Combining Use Cases into a Diagram
+
+- Each oval = A use case.
+- High-level diagrams show overall system interaction.
+
+Use Case Diagram Example: Library System
+
+Actor | Use Case | Description
+Library User | Register Book Loan | Borrows books
+Library User | Register Book Return | Returns books
+Library User | Query Book Availability | Checks book status
+Librarian | Register Book Loan | Record borrowed book
+Librarian | Register Book Return | Record returned book
+Librarian | Query Book Availability | Inventory checking
+Librarian | Add New Book | Add books to system
+
+Why Use Case Diagrams?
+
+- Communicates complex ideas simply.
+- Helps technical and non-technical stakeholders understand functionality.
+- Illustrates user roles and interactions visually.
+
+Key Elements in a Use Case Diagram
+
+System Boundary: Defines system's scope
+Actor: External entity interacting with system
+Use Case: User interaction achieving a goal
+Relationship: Association between actor and use case
+
+Actors in Use Case Diagrams
+
+- Primary Actors: Initiate the system interaction (usually left side).
+- Secondary Actors: Supportive roles, react to use cases (usually right side).
+
+Examples:
+- User (Primary) → Initiates search.
+- Database (Secondary) → Responds with results.
+
+Actors Represent Roles, Not Specific Individuals!
+
+Naming Tips for Actors and Use Cases
+
+- Actors: Name roles, not real people (e.g., "Customer", not "Bob").
+- Use Cases: Use clear, short verbs (e.g., "Withdraw Cash", "Print Invoice").
+
+Association in Use Case Diagram
+
+- Solid line between actor and use case shows interaction.
+- Multiple actors can be linked to the same use case.
+
+How to Create a Use Case Diagram
+
+1. Define system scope.
+2. Identify all actors.
+3. Identify user goals (use cases).
+4. Create a use case for every goal.
+5. Structure, prioritize, review and refine.
+
+Summary
+
+Topic | Key Point
+UML | Unified Modeling Language for modeling systems
+Use Case Diagram | Visualizes actors and system interactions
+Actor | Entity outside system interacting with it
+Primary Actor | Initiates system action
+Secondary Actor | Reacts to system action
+System Boundary | Defines scope of use cases
+Relationship | Shows actor-to-use case interaction
+
+Reference Sources
+
+- Creately – UML Diagram Types
+- Lucidchart – UML Use Case Diagrams
+- Visual Paradigm – Use Case Diagram Tutorials
+- Uptech – Functional vs Non-Functional Requirements
+
+Revision Questions
+
+1. What are key elements in a use case diagram?
+- System boundary, Actor, Use Case, Relationship.
+
+2. Difference between primary and secondary users?
+- Primary initiates interaction; Secondary supports interaction.
+
+3. Who uses UML and why?
+- Software developers to design system diagrams.
+
+4. Purpose of use case diagrams?
+- Visualize system functionality from user perspective.
+
+5. Symbols in a use case diagram?
+- Oval (Use Case), Stick figure (Actor), Solid line (Association), Rectangle (System Boundary).

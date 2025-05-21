@@ -1,0 +1,131 @@
+
+Chapter 8: Understand Software Testing
+Software Development Practices
+
+What is Software Testing?
+
+Definition:
+Software testing is the process of evaluating a software system to determine whether it meets specified requirements and is free from defects.
+
+Purpose:
+- Ensure software quality
+- Verify expected behavior
+- Identify bugs or performance issues
+- Improve user confidence
+
+Why is Software Testing Important?
+
+Even small software bugs can lead to serious consequences.
+
+Real-World Examples:
+- Therac-25 incident (1980s): A radiation therapy machine delivered lethal doses due to software failure, resulting in patient deaths.
+- Honda recall (2011): Faulty software affected engine and transmission systems, leading to safety concerns and a large-scale recall.
+
+Benefits of Software Testing
+
+- Detect defects early
+- Improve software reliability
+- Save cost and time by avoiding major issues
+- Enhance performance and user satisfaction
+- Support continuous integration in DevOps
+
+Principles of Software Testing
+
+1. Early Testing Saves Money: Detecting bugs in early stages reduces cost of fixing.
+2. Defect Clustering: Bugs often concentrate in a few critical areas of the system.
+3. Pesticide Paradox: Repeating the same tests won’t catch new defects; tests must be regularly updated.
+4. Context-Dependent: Testing strategy varies by application (e.g., a game vs. a bank app).
+
+Software Testing Methods
+
+Black Box Testing:
+- Focuses on inputs and expected outputs.
+- Tester doesn’t need knowledge of internal code.
+- Example: Login form input validation.
+
+White Box Testing:
+- Examines internal code logic and structure.
+- Example: Testing loop conditions, logic branches.
+
+Grey Box Testing:
+- Mix of both; limited knowledge of the system's internals.
+- Example: Testing APIs with some knowledge of backend logic.
+
+Common Testing Techniques
+
+- Loop Testing: Validates loop execution logic.
+- Data Flow Testing: Tracks data usage and definition.
+- Condition Testing: Verifies true/false logic in conditions.
+- Static Testing: Reviews code without execution (e.g., walkthroughs, inspections).
+
+Software Testing Frameworks
+
+TDD (Test-Driven Development): Write tests before writing code
+BDD (Behavior-Driven Development): Tests focus on user behavior (natural language style)
+ATDD (Acceptance Test-Driven Development): Collaborate with stakeholders to write acceptance tests before coding
+
+Static vs Dynamic Testing
+
+Static:
+- Review-based: code inspection, walkthroughs, peer reviews, static analysis (no code execution)
+
+Dynamic:
+- Execution-based: running the software to find bugs (includes both functional and non-functional testing)
+
+Dynamic Testing Categories
+
+Functional Testing:
+- Unit Testing: Tests individual units/modules
+- Integration Testing: Tests data flow between components
+- System Testing: Tests full system behavior
+- Acceptance Testing (UAT): Validates against business needs
+
+Non-Functional Testing:
+- Performance Testing: Speed, responsiveness under load
+- Security Testing: Protects data and systems from breaches
+- Compatibility Testing: Verifies behavior across platforms, devices, or browsers
+
+Manual vs Automated Testing
+
+Manual:
+- Tester follows test steps manually
+- Use Case: Exploratory testing, usability
+
+Automated:
+- Scripts or tools execute tests automatically
+- Use Case: Regression testing, load testing
+
+DevOps & Testing Integration
+
+Testing plays a central role in DevOps through automation and continuous workflows.
+
+Key Concepts:
+- CI (Continuous Integration): Run tests on each code commit
+- CD (Continuous Delivery/Deployment): Deliver tested code to production regularly
+- Use of tools like Jenkins, GitHub Actions, Selenium, etc.
+
+Summary
+
+- Software testing ensures quality and reliability.
+- Principles guide effective testing strategies.
+- Methods include Black Box, White Box, and Grey Box.
+- Frameworks like TDD/BDD/ATDD streamline test-first development.
+- Static and Dynamic testing approaches both play crucial roles.
+- Automation enhances efficiency and supports DevOps pipelines.
+
+Revision Questions
+
+1. What are the main goals of software testing?
+→ Detect bugs, validate requirements, improve quality.
+
+2. Explain the difference between static and dynamic testing.
+→ Static = no execution (e.g., code reviews), Dynamic = running the program.
+
+3. Give an example of a real-world issue caused by software bugs.
+→ Therac-25 overdose or Honda recall.
+
+4. What are some common non-functional testing types?
+→ Performance, security, compatibility.
+
+5. How does automation support DevOps?
+→ Enables frequent testing and deployment via CI/CD.

@@ -1,0 +1,78 @@
+
+Wireframe Explanation
+Views: Mobile and Desktop
+
+MOBILE VIEW (Left Side of Wireframe)
+
+Top Section:
+- Logo and Tagline centered at the top
+- Log In button positioned at the top-right
+
+Hero Image:
+- Large banner image with a camera icon
+- Acts as the main visual hook
+
+Video Player:
+- Positioned under the hero image
+- Includes a play icon
+- Represents an embedded video
+
+Benefit Section:
+- Displays one benefit at a time
+- Uses a horizontal slider
+- Text: "Slider - Press to Move"
+
+Testimonials:
+- User avatars and short texts
+- Appears as a horizontal slider
+
+Features Section:
+- Three vertically stacked feature blocks:
+  1. Feature 1
+  2. Feature 2
+  3. Feature 3
+- Each block includes an icon and a short description
+
+Sign-Up / Get Started:
+- Form to collect email addresses
+- Includes an input field labeled “Email” and a Submit button
+
+Footer:
+- Menu aligned left
+- Social icons centered
+- Page indicator dots aligned right
+
+DESKTOP VIEW (Right Side of Wireframe)
+
+Top Section:
+- Logo and Tagline aligned left
+- Log In button at the top-right
+
+Hero Image:
+- Wide horizontal banner with camera icon
+
+Video Player:
+- Centered embedded video with a play icon
+
+Benefits Section:
+- Displays three benefits side-by-side:
+  - Benefit #1
+  - Benefit #2
+  - Benefit #3
+
+Testimonials:
+- Section labeled "Slider 3–5 Testimonials"
+- Includes user avatars and rotating text
+
+Features Section:
+- Horizontal layout showing three feature cards
+- Each card has an icon and a short description
+
+Sign-Up / Get Started:
+- Horizontal layout of the form
+- Email input and submit button appear side-by-side
+
+Footer:
+- Menu aligned left
+- Social media icons aligned right
+- Navigation dots positioned at bottom-right corner

@@ -1,0 +1,79 @@
+
+Lab 3A: Requirement Development
+Software Development Practices – Requirements Engineering
+
+Objective
+
+In this lab, you will learn to identify and apply the four main activities of requirement development:
+
+- Requirement Gathering
+- Requirement Analysis
+- Requirement Specification
+- Requirement Verification
+
+These concepts will be applied to real-world scenarios to reinforce understanding.
+
+Tools, Equipment, and Materials
+
+Hardware: Personal Computer with Internet Access
+Software: Text Editing Software
+
+Introduction to Requirements Engineering
+
+Requirements Engineering is the process of establishing and managing what a system should do. It is a core discipline in software development that helps define clear, unambiguous, testable requirements.
+
+Why Is It Important?
+
+Poorly defined requirements lead to:
+- Miscommunication with clients
+- Incomplete or faulty system functions
+- Costly fixes during later stages
+
+To prevent this, requirement development follows a systematic process:
+
+The Four Key Activities of Requirement Development
+
+1. Requirement Gathering:
+Collecting raw data or inputs from stakeholders or sources like interviews, surveys, or observation.
+
+2. Requirement Analysis:
+Interpreting and organizing gathered information; identifying conflicts or redundancies.
+
+3. Requirement Specification:
+Clearly documenting agreed-upon requirements in a structured format.
+
+4. Requirement Verification:
+Ensuring that the documented requirements are complete, consistent, and meet stakeholder expectations.
+
+Scenario-Based Activity: Identify the Requirement Activity
+
+a. Charles is crafting an online survey to collect user feedback on application features.
+→ Requirement Gathering
+
+b. Mark is preparing a formal document listing all the features identified from surveys.
+→ Requirement Specification
+
+c. Stephen found an incomplete requirement statement and raised a concern.
+→ Requirement Verification
+
+d. Lionel is separating security requirements from performance requirements.
+→ Requirement Analysis
+
+e. Clare is observing the client's business processes to collect typical user needs.
+→ Requirement Gathering
+
+f. Leo is checking that all requirements collected are clear and unambiguous.
+→ Requirement Specification
+
+g. Philip is conducting a meeting with stakeholders to record their needs.
+→ Requirement Gathering
+
+h. Jerome is distributing questionnaires to stakeholders.
+→ Requirement Gathering
+
+Summary
+
+- Requirement Gathering: Involves collecting needs via questionnaires, surveys, or interviews.
+- Requirement Analysis: Focuses on interpreting, categorizing, and resolving conflicts in collected data.
+- Requirement Specification: Involves writing down the requirements clearly and completely.
+- Requirement Verification: Confirms that the requirements are correct, complete, and traceable.

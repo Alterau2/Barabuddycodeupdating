@@ -1,0 +1,197 @@
+
+Chapter 4: User Requirements Gathering and Analysis
+Software Development Practices
+
+Methods of Gathering User Requirements
+- User Survey
+- User Interview
+- Existing Documents Review
+- Existing Software Review
+- Study of User-Supplied Documentation
+
+User Survey
+Definition:
+A structured form of questioning to gather responses from users.
+
+Advantages:
+- Easy to conduct
+- Reaches a large audience at low cost
+
+Disadvantages:
+- Responses may be vague or not actionable
+
+Visualizing Survey Data (Hospital Survey)
+Survey Questions and Ratings:
+
+Cleanliness of the hospital - Average: 3.3
+Services offered - Average: 2.4
+Hospital cost - Average: 3.3
+Doctors’ performance - Average: 3.3
+Overall experience - Average: 4.0
+Quality of hospital staff - Average: 4.0
+
+User Interview
+Definition:
+Direct conversations, conducted one-on-one or with small groups.
+
+Advantages:
+- Interviewer can guide the discussion
+- Encourages developer-user relationship
+
+Disadvantages:
+- Time-consuming process
+
+Existing Documents Review
+Definition:
+Reviewing hardcopy or softcopy documents like reports, logs, minutes, marketing materials.
+
+Advantages:
+- Low-cost source of background info
+- Good for understanding processes
+
+Disadvantages:
+- May be incomplete or outdated
+
+Existing Software Review
+Definition:
+Analyzing existing software to verify functional and non-functional aspects.
+
+Advantages:
+- Identifies design defects
+- Highlights improvement areas
+
+Disadvantages:
+- Time-consuming and costly if developer effort is required
+
+Study of User-Supplied Documentation
+Definition:
+Reading documents like procedures, regulations, and standards provided by users.
+
+Advantages:
+- No need for user time investment
+- Helps learn formal procedures
+
+Disadvantages:
+- Real-world practices may differ from documents
+
+Software Requirements Document (SRD)
+- Official specification of WHAT the system should do (not HOW)
+- Includes user requirements and system requirements
+- Not a design document
+
+User Requirements Document (URD)
+- Captures user activities and expectations
+- Categorizes requirements into:
+  - Mandatory
+  - Desirable
+  - Optional
+  - Future enhancements
+
+Requirements Checklist
+- Tool to verify if requirements documentation is:
+  - Correct
+  - Complete
+  - Unambiguous
+  - Consistent
+  - Verifiable
+  - Approved
+
+Summary
+Gathering Methods:
+- Surveys: Easy, wide-reaching
+- Interviews: Interactive, builds rapport
+- Documents review: Cheap, detailed info
+- Software review: Detects defects
+- User-supplied docs: Understands formal standards
+
+SRD Overview:
+- Defines WHAT, not HOW
+- Covers user and system requirements
+
+Checklist Use:
+- Ensures documentation clarity and completeness
+
+Revision Questions
+1. State 2 advantages of each method:
+- Survey: Easy, wide reach
+- Interview: Guided discussion, user relationship
+- Documents review: Cheap, rich info
+- Software review: Detect issues, improvements
+- User docs: No time from users, procedural insight
+
+2. What is SRD?
+- Specifies WHAT the system should do
+
+3. What is URD?
+- Captures what users expect to perform
+
+4. What is the Requirement Checklist for?
+- Ensures complete, correct, and clear documentation
+
+References
+- Wikipedia
+- Requirements Gathering Templates and Techniques
+
+Requirements Gathering Process
+Steps:
+- Identify stakeholders
+- Conduct interviews, surveys, workshops
+- Document requirements clearly
+- Validate with stakeholders
+- Prioritize requirements
+- Review and obtain approval
+
+Techniques:
+- Interviews
+- Workshops
+- Surveys
+- Observations
+- Document analysis
+- Prototyping
+
+Tips for Effective Requirements Gathering
+- Be prepared
+- Ask open-ended questions
+- Listen actively
+- Document clearly
+- Manage expectations
+- Maintain traceability
+
+Requirements Gathering Template
+Requirement ID | Description | Priority | Source | Status
+
+Product Requirements Document (PRD) Template
+- Product Name and Status
+- Team Members
+- Target Release Date
+- Objectives
+- Customer Personas
+- Use Cases
+- Competitive Landscape
+- Assumptions
+- In-Scope/Out-of-Scope Features
+- Specific Requirements
+- Success Metrics (KPIs)
+- Open Questions
+
+Data Collection Methods
+- Surveys/Questionnaires
+- Interviews
+- Observations
+- Focus Groups
+- Document Review
+
+Best Practices for Data Collection
+- Define clear objectives
+- Choose appropriate methods
+- Ensure data quality
+- Respect ethics
+- Pilot test tools
+
+Conclusion
+Effective user requirements gathering is crucial for delivering successful software.
+- Shapes stakeholder expectations
+- Guides the project blueprint
+- Minimizes costly errors later
+
+Clear, complete, and validated requirements pave the way for successful, user-centered software systems.
