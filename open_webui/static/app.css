@@ -1,4 +1,4 @@
-/* === BaraBuddy app.css (with beige support) === */
+/* === BaraBuddy app.css (beige & theme support) === */
 
 /* Main app layout */
 #app-container {
@@ -47,7 +47,7 @@
 
 /* Chatbot message/input area (the "bubble") */
 .input-area {
-    background-color: var(--chat-bg, #e6dbc2);  /* Default darker beige, overridable by CSS var */
+    background-color: var(--chat-bg);
     padding: 1.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -60,13 +60,14 @@
 }
 
 .suggestion-item {
-    background-color: var(--chat-bg, #e6dbc2);
+    background-color: var(--chat-bg);
     border-radius: 0.75rem;
     margin-bottom: 0.75rem;
     padding: 1rem 1.2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
+/* Responsive adjustments */
 @media (max-width: 900px) {
     .sidebar {
         width: 70px;
@@ -81,7 +82,7 @@
     }
 }
 
-/* Optional: Remove borders or adjust further for ultra-clean look */
+/* Clean look: remove borders if wanted */
 .sidebar, .main-content, .input-area, .suggestion-item {
     border: none;
 }

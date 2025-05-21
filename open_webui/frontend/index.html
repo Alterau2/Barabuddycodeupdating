@@ -339,168 +339,413 @@
 	</body>
 </html>
 
-<style type="text/css" nonce="">
-    html {
-        overflow-y: hidden !important;
-    }
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/static/favicon.png" />
+		<link rel="icon" type="image/png" href="/static/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/svg+xml" href="/static/favicon.svg" />
+		<link rel="shortcut icon" href="/static/favicon.ico" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+        <link rel="stylesheet" href="/static/assets/splash.css" />
+        <link rel="stylesheet" href="/static/theme.css" />
+        <link rel="stylesheet" href="/static/app.css" />
 
-    #splash-screen {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #f5f5dc;  /* Changed to beige */
-}
+		<meta name="apple-mobile-web-app-title" content="Barabuddy AI" />
 
-/* Apply beige for dark theme as well */
-html.dark #splash-screen {
-    background: #f5f5dc;  /* Changed to beige */
-}
+		<link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"
+		/>
+		<meta name="theme-color" content="#171717" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="description" content="Barabuddy AI" />
+		<link
+			rel="search"
+			type="application/opensearchdescription+xml"
+			title="Barabuddy AI"
+			href="/opensearch.xml"
+		/>
+		<script src="/static/loader.js" defer></script>
 
-/* Apply beige for "her" theme */
-html.her #splash-screen {
-    background: #f5f5dc;  /* Changed to beige */
-}
+		<script>
+			function resizeIframe(obj) {
+				obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+			}
+		</script>
 
-    .main-logo {
-        width: auto;
-        height: 8rem;
-        margin-bottom: 1rem;
-        pointer-events: none;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
+		<script>
+			// Theme handling script
+			(() => {
+				const metaThemeColorTag = document.querySelector('meta[name="theme-color"]');
+				const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    .welcome-text {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        font-size: 1.75rem;
-        color: #1B3641;
-        margin-top: 1.5rem;
-        text-align: center;
-        opacity: 0;
-        animation: fadeIn 0.5s ease-out forwards;
-        animation-delay: 0.5s;
-        font-weight: 600;
-    }
+				if (!localStorage?.theme) {
+					localStorage.theme = 'system';
+				}
 
-    html.dark .welcome-text {
-        color: #faf6f1;
-    }
+				if (localStorage.theme === 'system') {
+					document.documentElement.classList.add(prefersDarkTheme ? 'dark' : 'light');
+					metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#ffffff');
+				} else if (localStorage.theme === 'oled-dark') {
+					document.documentElement.style.setProperty('--color-gray-800', '#101010');
+					document.documentElement.style.setProperty('--color-gray-850', '#050505');
+					document.documentElement.style.setProperty('--color-gray-900', '#000000');
+					document.documentElement.style.setProperty('--color-gray-950', '#000000');
+					document.documentElement.classList.add('dark');
+					metaThemeColorTag.setAttribute('content', '#000000');
+				} else if (localStorage.theme === 'light') {
+					document.documentElement.classList.add('light');
+					metaThemeColorTag.setAttribute('content', '#ffffff');
+				} else if (localStorage.theme === 'her') {
+					document.documentElement.classList.add('dark');
+					document.documentElement.classList.add('her');
+					metaThemeColorTag.setAttribute('content', '#983724');
+				} else {
+					document.documentElement.classList.add('dark');
+					metaThemeColorTag.setAttribute('content', '#171717');
+				}
 
-    html.her .welcome-text {
-        color: #ffffff;
-    }
+				window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
+					if (localStorage.theme === 'system') {
+						if (e.matches) {
+							document.documentElement.classList.add('dark');
+							document.documentElement.classList.remove('light');
+							metaThemeColorTag.setAttribute('content', '#171717');
+						} else {
+							document.documentElement.classList.add('light');
+							document.documentElement.classList.remove('dark');
+							metaThemeColorTag.setAttribute('content', '#ffffff');
+						}
+					}
+				});
 
-    .progress-container {
-        position: relative;
-        width: 24rem;
-        max-width: 90vw;
-        margin-top: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+				function setSplashImage() {
+					const logo = document.getElementById('logo');
+					const logoHer = document.getElementById('logo-her');
+					const isDarkMode = document.documentElement.classList.contains('dark');
+					
+					// Set initial logo with timestamp to prevent caching
+					const timestamp = new Date().getTime();
+					const baseUrl = `/static/barabuddy.png?v=${timestamp}`;
+					const darkUrl = `/static/barabuddy-dark.png?v=${timestamp}`;
+					
+					logo.src = baseUrl;
+					if (logoHer) logoHer.src = baseUrl;
 
-    .her-logo {
-        width: auto;
-        height: 15rem;
-        display: none;
-        pointer-events: none;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
+					if (isDarkMode) {
+						const darkImage = new Image();
+						darkImage.src = darkUrl;
 
-    .progress-wrapper {
-        position: relative;
-        width: 100%;
-        margin-top: 1.5rem;
-    }
+						darkImage.onload = () => {
+							logo.src = darkUrl;
+							logo.style.filter = '';
+							if (logoHer) {
+								logoHer.src = darkUrl;
+								logoHer.style.filter = '';
+							}
+						};
 
-    #progress-background {
-        position: absolute;
-        width: 100%;
-        height: 0.75rem;
-        border-radius: 9999px;
-        background-color: rgba(27, 54, 65, 0.1);
-        display: none;
-    }
+						darkImage.onerror = () => {
+							logo.src = baseUrl;
+							logo.style.filter = 'invert(1)';
+							if (logoHer) {
+								logoHer.src = baseUrl;
+								logoHer.style.filter = 'invert(1)';
+							}
+						};
+					}
+				}
 
-    #progress-bar {
-        position: absolute;
-        width: 0%;
-        height: 0.75rem;
-        border-radius: 9999px;
-        background-color: #1B3641;
-        display: none;
-        animation: loading 2s ease-in-out infinite;
-    }
+				// Run on initial load
+				document.addEventListener('DOMContentLoaded', setSplashImage);
+				// Run after a delay to ensure it sticks
+				setTimeout(setSplashImage, 100);
+			})();
+		</script>
 
-    html.dark #progress-bar {
-        background-color: #faf6f1;
-    }
+		<title>Barabuddy AI</title>
 
-    html.her .main-logo {
-        display: none;
-    }
+		<link rel="modulepreload" href="/_app/immutable/entry/start.CBnRensT.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/C0h0lmGK.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/BDiUIGvQ.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/0eAQ6-Fb.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.VLVKYCLk.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/C1FmrZbK.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/CMw2dQw9.js">
+	</head>
 
-    html.her .her-logo {
-        display: block;
-        filter: invert(1);
-    }
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_1xicl3p = {
+						base: ""
+					};
 
-    html.her #progress-background {
-        display: block;
-    }
+					const element = document.currentScript.parentElement;
 
-    html.her #progress-bar {
-        display: block;
-    }
+					Promise.all([
+						import("/_app/immutable/entry/start.CBnRensT.js"),
+						import("/_app/immutable/entry/app.VLVKYCLk.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element);
+					});
+				}
+			</script>
+		</div>
 
-    @media (max-width: 24rem) {
-        html.her #progress-background {
-            display: none;
-        }
+	<!-- Updated Splash Screen -->
+<div id="splash-screen">
+    <img
+        id="logo"
+        class="main-logo"
+        src="/static/barabuddy.png"
+        alt="Barabuddy AI"
+    />
 
-        html.her #progress-bar {
-            display: none;
-        }
-    }
+    <div class="welcome-text">
+        Welcome to Barabuddy AI
+    </div>
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
 
-    @keyframes pulse {
-        50% { opacity: 0.65; }
-    }
+	<!-- Add this right after your splash screen closes -->
+<div id="app-container">
+    <!-- Left Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-item">
+            <button class="sidebar-button">
+                <span class="icon">📝</span>
+                New Chat
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button class="sidebar-button">
+                <span class="icon">📋</span>
+                Notes
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button class="sidebar-button">
+                <span class="icon">💼</span>
+                Workspace
+            </button>
+        </div>
+        <div class="sidebar-item">
+            <button class="sidebar-button">
+                <span class="icon">🔍</span>
+                Search
+            </button>
+        </div>
+        
+        <!-- Chats Section -->
+        <div class="chats-section">
+            <div class="section-header">Chats</div>
+            <div class="chat-item">Today</div>
+            <div class="chat-group">Software Development Insights</div>
+            <div class="chat-item">Yesterday</div>
+            <div class="chat-group">Software Development Practices</div>
+        </div>
 
-    @keyframes loading {
-        0% { width: 0%; }
-        50% { width: 70%; }
-        100% { width: 100%; }
-    }
+        <!-- User Info -->
+        <div class="user-info">
+            <div class="user-avatar">AL</div>
+            <div class="user-name">Austen Low</div>
+        </div>
+    </div>
 
-    .animate-pulse-fast {
-        animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <select class="mode-selector">
+                <option>barabuddy-limited:latest</option>
+            </select>
+            <button class="set-default-btn">Set as default</button>
+        </div>
 
-	/* Add these new styles to your existing style block */
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="bot-message">
+                <img src="/static/barabuddy.png" class="bot-avatar" alt="BaraBuddy" />
+                <div class="message-content">
+                    <h2>BaraBuddy</h2>
+                    <div class="input-area">
+                        <p>How can I help you today?</p>
+                        <div class="code-interpreter">
+                            <span class="icon">💻</span>
+                            Code Interpreter
+                            <div class="action-buttons">
+                                <button class="action-btn">↻</button>
+                                <button class="action-btn">→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Queries -->
+            <div class="suggested-queries">
+                <div class="suggestion-count">4 Suggested</div>
+                <div class="suggestion-item">
+                    <h3>Help me study</h3>
+                    <p>vocabulary for a college entrance exam</p>
+                </div>
+                <div class="suggestion-item">
+                    <h3>Give me ideas</h3>
+                    <p>for what to do with my kids' art</p>
+                </div>
+                <div class="suggestion-item">
+                    <h3>Show me a code snippet</h3>
+                    <p>of a website's sticky header</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Add this new loading message container -->
+    <div class="loading-message-container">
+        <span id="loading-message" class="loading-message">Welcome to your personal Barabuddy AI companion...</span>
+    </div>
+
+    <div class="progress-container">
+        <img
+            id="logo-her"
+            class="her-logo animate-pulse-fast"
+            src="/static/barabuddy.png"
+            alt="Barabuddy AI"
+        />
+
+        <div class="progress-wrapper">
+            <div id="progress-background"></div>
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+		<!-- Loading Animation Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const splashScreen = document.getElementById('splash-screen');
+        const appContainer = document.getElementById('app-container');
+        const progressBar = document.getElementById('progress-bar');
+        
+        let progress = 0;
+        const interval = setInterval(() => {
+            progress += 1;
+            if (progressBar) {
+                progressBar.style.width = `${progress}%`;
+            }
+            if (progress >= 100) {
+                clearInterval(interval);
+            }
+        }, 20);
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                splashScreen.style.transition = 'opacity 0.5s ease-out';
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                    appContainer.style.display = 'flex'; // Show the main app
+                }, 500);
+            }, 1000);
+        });
+    });
+</script>
+
+		<!-- Theme Observer Script -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				// Watch for theme changes
+				const observer = new MutationObserver((mutations) => {
+					mutations.forEach((mutation) => {
+						if (mutation.attributeName === 'class') {
+							setSplashImage();
+						}
+					});
+				});
+				
+				observer.observe(document.documentElement, {
+					attributes: true
+				});
+			});
+
+
+			
+		</script>
+	</body>
+</html>
+
+<style>
 :root {
-    --primary-bg: #faf6f1;
+    --primary-bg: #f5f5dc;         /* Beige page background */
     --sidebar-bg: #ffffff;
+    --chat-bg: #e6dbc2;            /* Slightly darker beige for chat box and suggestions */
     --text-primary: #1B3641;
     --text-secondary: #666666;
-    --border-color: #e5e5e5;
-    --hover-bg: #f5f5f5;
+    --border-color: rgba(0,0,0,0.1);
+    --hover-bg: #f3ecd2;
 }
 
+html.dark {
+    --primary-bg: #1B3641;
+    --sidebar-bg: #0f2229;
+    --chat-bg: #22363f;            /* Deep blue for chat box in dark */
+    --text-primary: #faf6f1;
+    --text-secondary: #999999;
+    --border-color: rgba(255,255,255,0.1);
+    --hover-bg: #22363f;
+}
+
+html.her {
+    --primary-bg: #C77D52;
+    --sidebar-bg: #983724;
+    --chat-bg: #e6dbc2;            /* Beige chat in her theme (can change for your taste) */
+    --text-primary: #ffffff;
+    --text-secondary: #f0f0f0;
+    --border-color: rgba(255,255,255,0.2);
+    --hover-bg: #a84834;
+}
+
+html {
+    overflow-y: hidden !important;
+}
+
+/* Splash screen background always beige */
+#splash-screen,
+html.dark #splash-screen,
+html.her #splash-screen {
+    background: #f5f5dc;
+}
+
+.main-logo {
+    width: auto;
+    height: 8rem;
+    margin-bottom: 1rem;
+    pointer-events: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.welcome-text {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.75rem;
+    color: #1B3641;
+    margin-top: 1.5rem;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+    font-weight: 600;
+}
+html.dark .welcome-text { color: #faf6f1; }
+html.her .welcome-text { color: #ffffff; }
+
+/* App container & main layout */
 #app-container {
     display: none; /* Will be shown after splash screen */
     height: 100vh;
@@ -515,6 +760,22 @@ html.her #splash-screen {
     display: flex;
     flex-direction: column;
     padding: 16px;
+}
+
+.sidebar-button, .chat-group, .user-name, 
+.message-content h2, .suggestion-item h3 {
+    color: var(--text-primary);
+}
+
+.chat-item, .suggestion-item p {
+    color: var(--text-secondary);
+}
+
+.sidebar-footer {
+    margin-top: 2rem;
+    text-align: left;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .sidebar-button {
@@ -534,14 +795,9 @@ html.her #splash-screen {
     background-color: var(--hover-bg);
 }
 
-.icon {
-    margin-right: 8px;
-}
+.icon { margin-right: 8px; }
 
-/* Chat Section */
-.chats-section {
-    margin-top: 24px;
-}
+.chats-section { margin-top: 24px; }
 
 .section-header {
     font-weight: 600;
@@ -564,8 +820,11 @@ html.her #splash-screen {
 .main-content {
     flex: 1;
     padding: 24px;
+    background-color: var(--primary-bg);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .header {
@@ -603,16 +862,17 @@ html.her #splash-screen {
     border-radius: 4px;
 }
 
-.message-content h2 {
-    margin: 0 0 16px 0;
-    color: var(--text-primary);
-}
-
 .input-area {
-    background-color: var(--sidebar-bg);
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--chat-bg);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .code-interpreter {
@@ -624,9 +884,7 @@ html.her #splash-screen {
     margin-top: 16px;
 }
 
-.action-buttons {
-    margin-left: auto;
-}
+.action-buttons { margin-left: auto; }
 
 .action-btn {
     padding: 4px 8px;
@@ -646,7 +904,7 @@ html.her #splash-screen {
 }
 
 .suggestion-item {
-    background-color: var(--sidebar-bg);
+    background-color: var(--chat-bg);
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 12px;
@@ -687,26 +945,25 @@ html.her #splash-screen {
     color: var(--text-primary);
 }
 
-/* Dark Theme Overrides */
-html.dark {
-    --primary-bg: #1B3641;
-    --sidebar-bg: #0f2229;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --border-color: #2a3f47;
-    --hover-bg: #1a2f38;
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 70px;
+        padding: 0.5rem 0.5rem 0.5rem 0.7rem;
+    }
+    .main-content {
+        padding: 0.5rem;
+    }
+    .input-area {
+        padding: 1rem;
+        max-width: 100vw;
+    }
 }
 
-/* Her Theme Overrides */
-html.her {
-    --primary-bg: #C77D52;
-    --sidebar-bg: #983724;
-    --text-primary: #ffffff;
-    --text-secondary: #f0f0f0;
-    --border-color: #b56242;
-    --hover-bg: #a84834;
+/* Optional: Remove borders for ultra-clean look */
+.sidebar, .main-content, .input-area, .suggestion-item {
+    border: none;
 }
 
-
-
+/* Progress bar, logo, and other splash styles remain unchanged ... */
 </style>
