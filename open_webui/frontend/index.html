@@ -33,10 +33,10 @@
             const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
             if (!localStorage?.theme) {
-                localStorage.theme = 'system';
+                localStorage.theme = 'light';
             }
 
-            if (localStorage.theme === 'system') {
+            if (localStorage.theme === 'light') {
                 document.documentElement.classList.add(prefersDarkTheme ? 'dark' : 'light');
                 metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#ffffff');
             } else if (localStorage.theme === 'oled-dark') {

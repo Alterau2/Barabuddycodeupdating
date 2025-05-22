@@ -26,3 +26,10 @@ html.her {
     --text-secondary: #f0f0f0;
     --border-color: rgba(255, 255, 255, 0.2);
 }
+
+
+
+/* Force chat bubble to beige even in dark mode (optional override) */
+html.dark {
+    --chat-bg: #e6dbc2 !important;
+}

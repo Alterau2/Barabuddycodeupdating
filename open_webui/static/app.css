@@ -86,3 +86,17 @@
 .sidebar, .main-content, .input-area, .suggestion-item {
     border: none;
 }
+
+
+
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fdf5e6 url('/static/bear-bg.png') no-repeat center center fixed;
+    background-size: cover;
+}
