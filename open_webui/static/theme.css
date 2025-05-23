@@ -1,35 +1,41 @@
+/* Default theme variables (acts as a base, often similar to light theme) */
 :root {
-    --primary-bg: #f5f5dc;
-    --sidebar-bg: #ffffff;
-    --chat-bg: #e6dbc2;      /* added: beige tone for chat area */
-    --text-primary: #1B3641;
-    --text-secondary: #666666;
-    --border-color: rgba(0, 0, 0, 0.1);
+    --primary-bg: #f5f5dc;    /* Beige - Default page background */
+    --sidebar-bg: #ffffff;    /* White */
+    --chat-bg: #e6dbc2;       /* A slightly different beige for chat areas */
+    --text-primary: #1B3641;  /* Dark Blue/Grey */
+    --text-secondary: #666666;/* Grey */
+    --border-color: rgba(0, 0, 0, 0.1); /* Light border */
+}
+
+/* Light theme overrides */
+html.light {
+  --primary-bg: #F5F5DC;    /* Explicitly Beige for light theme page background */
+  --sidebar-bg: #FAFAFA;    /* Off-white */
+  --chat-bg: #F5F5DC;       /* Beige for chat elements */
+  --text-primary: #333333;  /* Dark Grey */
+  --text-secondary: #555555;/* Medium Grey */
+  --border-color: #E0E0E0;  /* Light Grey border */
 }
 
 /* Dark theme overrides */
 html.dark {
-    --primary-bg: #1B3641;
-    --sidebar-bg: #0f2229;
-    --chat-bg: #0f2229;      /* added: dark chat area background */
-    --text-primary: #faf6f1;
-    --text-secondary: #999999;
-    --border-color: rgba(255, 255, 255, 0.1);
+    --primary-bg: #121212;    /* Very Dark Grey/Black - Page background */
+    --sidebar-bg: #0f2229;    /* Dark Blue/Grey */
+    --chat-bg: #0f2229;       /* Dark Blue/Grey for chat area */
+    /* To force beige chat in dark mode (uncomment if needed, but generally not recommended for consistency): */
+    /* --chat-bg: #e6dbc2 !important; */
+    --text-primary: #faf6f1;  /* Off-white/Light Beige */
+    --text-secondary: #999999;/* Light Grey */
+    --border-color: rgba(255, 255, 255, 0.1); /* Light border for dark theme */
 }
 
 /* Her theme overrides */
 html.her {
-    --primary-bg: #C77D52;
-    --sidebar-bg: #983724;
-    --chat-bg: #983724;      /* added: her theme chat area (using sidebar color or similar) */
-    --text-primary: #ffffff;
-    --text-secondary: #f0f0f0;
-    --border-color: rgba(255, 255, 255, 0.2);
-}
-
-
-
-/* Force chat bubble to beige even in dark mode (optional override) */
-html.dark {
-    --chat-bg: #e6dbc2 !important;
+    --primary-bg: #C77D52;    /* Burnt Orange */
+    --sidebar-bg: #983724;    /* Darker Red/Orange */
+    --chat-bg: #983724;       /* Matching chat area */
+    --text-primary: #ffffff;  /* White */
+    --text-secondary: #f0f0f0;/* Very Light Grey */
+    --border-color: rgba(255, 255, 255, 0.2); /* Light border for her theme */
 }

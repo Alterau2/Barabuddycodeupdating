@@ -38,16 +38,26 @@
 .main-content {
     flex: 1;
     padding: 1.5rem;
-    background-color: var(--primary-bg);
+    /* Default background with image, will be overridden by themes if needed */
+    background: #fdf5e6 url('/static/bear-bg.png') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.suggestion-item {
+    background-color: var(--chat-bg);
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
 /* Chatbot message/input area (the "bubble") */
 .input-area {
-    background-color: var(--chat-bg);
+    background-color: var(--chat-bg); /* Use CSS variable for themeable chat background */
     padding: 1.5rem;
     border-radius: 0.75rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -59,14 +69,6 @@
     align-items: flex-start;
 }
 
-.suggestion-item {
-    background-color: var(--chat-bg);
-    border-radius: 0.75rem;
-    margin-bottom: 0.75rem;
-    padding: 1rem 1.2rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-}
-
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .sidebar {
@@ -74,7 +76,7 @@
         padding: 0.5rem 0.5rem 0.5rem 0.7rem;
     }
     .main-content {
-        padding: 0.5rem;
+        padding: 0.5rem; /* Adjust padding for smaller screens */
     }
     .input-area {
         padding: 1rem;
@@ -82,21 +84,18 @@
     }
 }
 
+/* Theme-specific overrides */
+html.light .main-content {
+  background: #F5F5DC; /* Beige solid color, overrides image */
+}
+html.light .chat-area { /* Assuming .chat-area is a valid class for your chat messages display */
+  background-color: #F5F5DC; /* Beige */
+}
+html.light .input-area {
+  background-color: #F5F5DC; /* Beige for input area in light mode */
+}
+
 /* Clean look: remove borders if wanted */
 .sidebar, .main-content, .input-area, .suggestion-item {
     border: none;
-}
-
-
-
-
-.main-content {
-    flex: 1;
-    padding: 24px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fdf5e6 url('/static/bear-bg.png') no-repeat center center fixed;
-    background-size: cover;
 }

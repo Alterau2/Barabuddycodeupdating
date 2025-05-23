@@ -11,6 +11,46 @@
     <link rel="stylesheet" href="/static/theme.css" />
     <link rel="stylesheet" href="/static/app.css" />
 
+    <!-- Custom styles for chatbot background -->
+    <!-- Custom styles for theme-specific backgrounds -->
+    <style>
+        /* Ensure html element is transparent to not obscure body background */
+        html {
+            background-color: transparent !important;
+        }
+
+        /* Set body background image and fallback color.
+           !important is used to increase specificity against external styles. */
+        body {
+            background-image: url('/static/bear-bg.png') !important;
+            background-color: var(--primary-bg) !important; /* Fallback color */
+            background-size: cover !important; /* Ensure the image covers the whole area */
+            background-position: center !important; /* Center the image */
+            background-repeat: no-repeat !important; /* Prevent the image from repeating */
+            background-attachment: fixed !important; /* Keep the background fixed during scroll */
+            min-height: 100vh !important; /* Ensure body takes up at least full viewport height */
+        }
+
+        /* Ensure main app containers are transparent to show the body's background image.
+           The !important flag helps override other styles from app.css or theme.css. */
+        #app-container,
+        .main-content {
+            background-color: transparent !important;
+        }
+
+        .chat-area { /* Chat area itself has a solid background for readability */
+            background-color: var(--primary-bg);
+        }
+
+        /* Target the main SvelteKit app's background-defining div to make it transparent.
+           This selector targets the div that has both 'bg-white' (for light mode)
+           and 'dark:bg-gray-900' (for dark mode) in its class list,
+           which is a common pattern for main background panels in Tailwind. */
+        .app > div[class*="bg-white"][class*="dark:bg-gray-900"] {
+            background-color: transparent !important;
+        }
+    </style>
+
     <meta name="apple-mobile-web-app-title" content="Barabuddy AI" />
     <link rel="manifest" href="/manifest.json" crossorigin="use-credentials" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"/>
@@ -29,46 +69,94 @@
     <script>
         // Theme handling script
         (() => {
+            const root = document.documentElement;
             const metaThemeColorTag = document.querySelector('meta[name="theme-color"]');
-            const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-            if (!localStorage?.theme) {
-                localStorage.theme = 'light';
+            function applyThemeStyles(themeToApply) {
+                // Clear previous theme classes and specific styles
+                root.classList.remove('light', 'dark', 'her');
+                root.style.removeProperty('--color-gray-800');
+                root.style.removeProperty('--color-gray-850');
+                root.style.removeProperty('--color-gray-900');
+                root.style.removeProperty('--color-gray-950');
+                root.style.removeProperty('--primary-bg'); // Reset primary background for all themes initially
+
+                if (themeToApply === 'light') {
+                    root.classList.add('light');
+                    metaThemeColorTag.setAttribute('content', '#FDF5E6'); // Updated meta theme color for light theme
+                    root.style.setProperty('--primary-bg', '#FDF5E6');   // Set light theme background
+                } else if (themeToApply === 'oled-dark') {
+                    root.classList.add('dark'); // oled-dark implies dark mode
+                    root.style.setProperty('--color-gray-800', '#101010');
+                    root.style.setProperty('--color-gray-850', '#050505');
+                    root.style.setProperty('--color-gray-900', '#000000');
+                    root.style.setProperty('--color-gray-950', '#000000');
+                    metaThemeColorTag.setAttribute('content', '#000000');
+                    root.style.setProperty('--primary-bg', '#000000');   // Set oled-dark theme background
+                } else if (themeToApply === 'her') {
+                    root.classList.add('dark', 'her'); // 'her' implies dark mode
+                    metaThemeColorTag.setAttribute('content', '#983724');
+                    root.style.setProperty('--primary-bg', '#983724');   // Set 'her' theme background (using meta color as a proxy)
+                } else { // Default to 'dark' for 'dark' theme or any unrecognized theme
+                    root.classList.add('dark');
+                    metaThemeColorTag.setAttribute('content', '#171717');
+                    root.style.setProperty('--primary-bg', '#171717');   // Set default dark theme background
+                }
             }
 
-            if (localStorage.theme === 'light') {
-                document.documentElement.classList.add(prefersDarkTheme ? 'dark' : 'light');
-                metaThemeColorTag.setAttribute('content', prefersDarkTheme ? '#171717' : '#ffffff');
-            } else if (localStorage.theme === 'oled-dark') {
-                document.documentElement.style.setProperty('--color-gray-800', '#101010');
-                document.documentElement.style.setProperty('--color-gray-850', '#050505');
-                document.documentElement.style.setProperty('--color-gray-900', '#000000');
-                document.documentElement.style.setProperty('--color-gray-950', '#000000');
-                document.documentElement.classList.add('dark');
-                metaThemeColorTag.setAttribute('content', '#000000');
-            } else if (localStorage.theme === 'light') {
-                document.documentElement.classList.add('light');
-                metaThemeColorTag.setAttribute('content', '#ffffff');
-            } else if (localStorage.theme === 'her') {
-                document.documentElement.classList.add('dark');
-                document.documentElement.classList.add('her');
-                metaThemeColorTag.setAttribute('content', '#983724');
-            } else {
-                document.documentElement.classList.add('dark');
-                metaThemeColorTag.setAttribute('content', '#171717');
+            function updateTheme() {
+                let storedTheme = localStorage.getItem('theme');
+                const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+                // Default to 'light' if no theme is stored, to ensure --primary-bg is set.
+                // The original code already defaulted to 'light' for localStorage initialization.
+
+                // Ensure a theme is always set in localStorage, defaulting to 'light' (as per original behavior)
+                if (!storedTheme) {
+                    storedTheme = 'light';
+                    localStorage.setItem('theme', storedTheme);
+                }
+                
+                let themeToApply;
+                switch (storedTheme) {
+                    case 'system':
+                        themeToApply = prefersDarkScheme ? 'dark' : 'light';
+                        break;
+                    case 'light':
+                        themeToApply = 'light';
+                        break;
+                    case 'oled-dark':
+                        themeToApply = 'oled-dark';
+                        break;
+                    case 'her':
+                        themeToApply = 'her';
+                        break;
+                    case 'dark':
+                        themeToApply = 'dark';
+                        break;
+                    default:
+                        // If storedTheme is an unrecognized value, default to 'light' and update localStorage
+                        console.warn(`Unrecognized theme "${storedTheme}" found in localStorage. Defaulting to "light".`);
+                        localStorage.setItem('theme', 'light');
+                        themeToApply = 'light';
+                        break;
+                }
+                applyThemeStyles(themeToApply);
             }
 
-            window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => {
-                if (localStorage.theme === 'system') {
-                    if (e.matches) {
-                        document.documentElement.classList.add('dark');
-                        document.documentElement.classList.remove('light');
-                        metaThemeColorTag.setAttribute('content', '#171717');
-                    } else {
-                        document.documentElement.classList.add('light');
-                        document.documentElement.classList.remove('dark');
-                        metaThemeColorTag.setAttribute('content', '#ffffff');
-                    }
+            updateTheme(); // Apply theme on initial load
+
+            // Listen for changes in system preference
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (localStorage.getItem('theme') === 'system') {
+                    updateTheme(); // Re-evaluate and apply theme
+                }
+            });
+
+            // Optional: Listen for storage changes to sync theme across tabs
+            window.addEventListener('storage', (event) => {
+                if (event.key === 'theme') {
+                    updateTheme();
                 }
             });
 
@@ -290,3 +378,4 @@
     </script>
 </body>
 </html>
+<div class="text-gray-700 dark:text-gray-900 bg-[var(--primary-bg)] ...">
